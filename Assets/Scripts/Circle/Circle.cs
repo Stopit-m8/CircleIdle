@@ -1,6 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 using System;
+using Unity.VisualScripting;
 
 public class Circle : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class Circle : MonoBehaviour
     private int _circleValue = 1;
     private Vector3 _originalScale;
 
-    public event Action OnComplete;
+    public event Action<Circle, int> OnComplete;
 
     private void Awake()
     {
@@ -31,7 +32,7 @@ public class Circle : MonoBehaviour
 
     private void CycleComplete()
     {
-        OnComplete?.Invoke();
+        OnComplete?.Invoke(this, _circleValue);
         Debug.Log($"Cycle Complete, value = {_circleValue}, duration = {_circleDuration}");
         gameObject.SetActive(false);
     }

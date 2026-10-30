@@ -199,6 +199,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 313516135}
   m_CullTransparentMesh: 1
+--- !u!1 &428486279
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 428486280}
+  m_Layer: 0
+  m_Name: GoldenPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &428486280
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428486279}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1212087192}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519110377
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,6 +715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CircleManager
   normalCirclePrefab: {fileID: 8048270087690879497, guid: 2cd8293b1f54a2745879eb0d3a84afdb, type: 3}
   goldenCirclePrefab: {fileID: 8048270087690879497, guid: 2cd8293b1f54a2745879eb0d3a84afdb, type: 3}
+  upgradeManager: {fileID: 0}
 --- !u!114 &815414154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -700,9 +732,11 @@ MonoBehaviour:
   - tag: normal
     prefab: {fileID: 8048270087690879497, guid: 2cd8293b1f54a2745879eb0d3a84afdb, type: 3}
     size: 20
+    parent: {fileID: 1280609261}
   - tag: golden
     prefab: {fileID: 1019048113981938512, guid: ef5dd2ba64506974f97a6cc5d6ecf4da, type: 3}
     size: 20
+    parent: {fileID: 428486280}
 --- !u!1 &1063837669
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,6 +858,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1063837669}
   m_CullTransparentMesh: 1
+--- !u!1 &1212087191
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1212087192}
+  m_Layer: 0
+  m_Name: ===Object Pool===
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1212087192
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212087191}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.46476, y: -0.61704, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1280609261}
+  - {fileID: 428486280}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1219849836
 GameObject:
   m_ObjectHideFlags: 0
@@ -902,6 +969,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1280609260
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1280609261}
+  m_Layer: 0
+  m_Name: NormalPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1280609261
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280609260}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1212087192}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1424842020
 GameObject:
@@ -1128,6 +1226,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfe5988da90cf6140a8b0e22870d2eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CurrencyManager
+  circleManager: {fileID: 815414153}
+  upgradeManager: {fileID: 0}
 --- !u!1 &1809752099
 GameObject:
   m_ObjectHideFlags: 0
@@ -1307,6 +1407,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GoldenCircle
       objectReference: {fileID: 0}
+    - target: {fileID: 1019048113981938512, guid: ef5dd2ba64506974f97a6cc5d6ecf4da, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5243962035942166129, guid: ef5dd2ba64506974f97a6cc5d6ecf4da, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1363,3 +1467,4 @@ SceneRoots:
   - {fileID: 1219849839}
   - {fileID: 593957800}
   - {fileID: 263744410}
+  - {fileID: 1212087192}
