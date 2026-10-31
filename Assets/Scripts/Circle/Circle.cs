@@ -7,11 +7,11 @@ public class Circle : MonoBehaviour
 {
     private GameObject _centerCircle;
     private float _circleDuration = 2f;
-    private int _circleValue = 1;
+    private long _circleValue = 1;
     private Vector3 _originalScale;
     private bool _isGolden = false;
 
-    public event Action<Circle, int> OnComplete;
+    public event Action<Circle, long> OnComplete;
 
     private void Awake()
     {
@@ -47,7 +47,7 @@ public class Circle : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void Initialize(int circleValue, float circleDuration, bool isGolden)
+    public void Initialize(long circleValue, float circleDuration, bool isGolden)
     {
         _circleValue = circleValue;
         _circleDuration = circleDuration;

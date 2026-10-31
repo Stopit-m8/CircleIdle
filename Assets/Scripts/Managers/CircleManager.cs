@@ -6,16 +6,16 @@ public class CircleManager : MonoBehaviour
     [SerializeField] private GameObject normalCirclePrefab;
     [SerializeField] private GameObject goldenCirclePrefab;
     [SerializeField] private UpgradeManager upgradeManager;
-    private int _circleValue = 1;
+    private long _circleValue = 1;
     private float _circleSpeed = 2f;
     private float _goldenChance = 0.01f;
-    private float _globalMultiplier = 0f;
+    private double _globalMultiplier = 0f;
     private float _circleSpawnRate = 2f;
     private float _circleSpawnTimer = 0f;
     private GameObject _circle;
-    private int _finalValue;
+    private long _finalValue;
 
-    public event Action<int> OnCycleComplete;
+    public event Action<long> OnCycleComplete;
 
     private void Start()
     {
@@ -37,7 +37,7 @@ public class CircleManager : MonoBehaviour
         upgradeManager.OnUpgrade -= UpdateStat;
     }
 
-    private void UpdateStat(int circleValue, float circleSpeed, float goldenChance, int circleCount, float globalmultiplier)
+    private void UpdateStat(long circleValue, float circleSpeed, float goldenChance, long circleCount, double globalmultiplier)
     {
         _circleValue = circleValue;
         _circleSpeed = circleSpeed;
@@ -62,14 +62,14 @@ public class CircleManager : MonoBehaviour
         if (UnityEngine.Random.value <= _goldenChance)
         {
             _circle = CirclePooling.Instance.SpawnFromPool("golden", this.transform.position);
-            int _goldenValue = Mathf.RoundToInt(UnityEngine.Random.Range(5f, 10f) * _circleValue);
-            _finalValue = _goldenValue + (Mathf.RoundToInt(_goldenValue * _globalMultiplier));
+            long _goldenValue = (long)Mathf.Round(UnityEngine.Random.Range(5f, 10f) * _circleValue);
+            _finalValue = _goldenValue + (long)Math.Round(_goldenValue * _globalMultiplier);
             _circle.GetComponent<Circle>().Initialize(_finalValue, _circleSpeed, true);
         }
         else
         {
             _circle = CirclePooling.Instance.SpawnFromPool("normal", this.transform.position);
-            _finalValue = _circleValue + (Mathf.RoundToInt(_circleValue * _globalMultiplier));
+            _finalValue = _circleValue + (long)Math.Round(_circleValue * _globalMultiplier);
             _circle.GetComponent<Circle>().Initialize(_finalValue, _circleSpeed, false);
         }
         
@@ -78,13 +78,13 @@ public class CircleManager : MonoBehaviour
         _circle.GetComponent<Circle>().OnComplete += PassOnPoints;
     }
 
-    private void CycleComplete(Circle currCircle, int currCircleValue)
+    private void CycleComplete(Circle currCircle, long currCircleValue)
     {
         currCircle.OnComplete -= CycleComplete;
         currCircle.OnComplete -= PassOnPoints;
     }
 
-    private void PassOnPoints(Circle currCircle, int currCircleValue)
+    private void PassOnPoints(Circle currCircle, long currCircleValue)
     {
         OnCycleComplete?.Invoke(currCircleValue);
     }

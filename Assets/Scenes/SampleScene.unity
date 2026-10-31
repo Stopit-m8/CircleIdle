@@ -365,7 +365,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 15
   m_Viewport: {fileID: 0}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}
@@ -1050,14 +1050,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 226908700}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1847586971}
   - {fileID: 1801004969}
-  m_Father: {fileID: 263744410}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &226908702
 MonoBehaviour:
@@ -1113,7 +1113,6 @@ Transform:
   - {fileID: 1424842021}
   - {fileID: 696137319}
   - {fileID: 1084532396}
-  - {fileID: 226908701}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &310828601 stripped
@@ -4019,7 +4018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cbe9d825b2329247a830e5ebaa6360c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeManager
-  pointOnHit: 1
+  pointOnHit: 1000000000
   pointOnHitPrice: 10
   pointOnHitPriceMultiplier: 1.3
   pointOnHitEffect: 2
@@ -4027,10 +4026,12 @@ MonoBehaviour:
   speedCirclePrice: 50
   speedCirclePriceMultiplier: 1.5
   speedCircleEffect: 0.05
+  speedCap: 0.1
   goldenCircleChance: 0.01
   goldenCircleChancePrice: 150
   goldenCircleChancePriceMultiplier: 1.85
   goldenCircleChanceEffect: 0.015
+  goldenCap: 0.35
   moreCircle: 1
   moreCirclePrice: 500
   moreCirclePriceMultiplier: 3
@@ -6316,4 +6317,5 @@ SceneRoots:
   - {fileID: 1219849839}
   - {fileID: 593957800}
   - {fileID: 263744410}
+  - {fileID: 226908701}
   - {fileID: 1212087192}

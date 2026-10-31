@@ -5,9 +5,9 @@ public class CurrencyManager : MonoBehaviour
 {
     [SerializeField] private CircleManager circleManager;
     [SerializeField] private UpgradeManager upgradeManager;
-    private int _currentCurency = 0;
+    private long _currentCurency = 0;
 
-    public event Action<int> OnUpdate;
+    public event Action<long> OnUpdate;
 
     private void Awake()
     {
@@ -27,7 +27,7 @@ public class CurrencyManager : MonoBehaviour
         upgradeManager.OnBuy -= UpdateCurrency;
     }
 
-    private void UpdateCurrency(int newValue)
+    private void UpdateCurrency(long newValue)
     {
         _currentCurency += newValue;
         OnUpdate?.Invoke(_currentCurency);

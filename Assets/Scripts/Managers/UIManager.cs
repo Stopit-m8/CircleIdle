@@ -22,12 +22,12 @@ public class UIManager : MonoBehaviour
 
     }
 
-    private void UpdateCurrencyUI(int currentCurrency)
+    private void UpdateCurrencyUI(long currentCurrency)
     {
         currencyText.text = currentCurrency.ToString();
     }
 
-    private void UpdateUpgradeUI(int pointPrice, int speedPrice, int goldenPrice, int moreCirclePrice, int globalMultiplierPrice)
+    private void UpdateUpgradeUI(long pointPrice, long speedPrice, long goldenPrice, long moreCirclePrice, long globalMultiplierPrice)
     {
         pointUpgradeText.text = pointPrice.ToString();
         speedUpgradeText.text = speedPrice.ToString();
