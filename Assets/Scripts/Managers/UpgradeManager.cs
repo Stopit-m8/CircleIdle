@@ -4,36 +4,36 @@ using UnityEngine;
 public class UpgradeManager : MonoBehaviour
 {
     [Header("Point On Hit")]
-    [SerializeField] private long pointOnHit = 1;
-    [SerializeField] private long pointOnHitPrice = 10;
+    public long pointOnHit { get; private set; } = 1;
+    public long pointOnHitPrice { get; private set; } = 10;
     [SerializeField] private float pointOnHitPriceMultiplier;
     [SerializeField] private int pointOnHitEffect = 2;
 
     [Header("Speed Circle")]
-    [SerializeField] private float speedCircle = 2f;
-    [SerializeField] private long speedCirclePrice = 50;
+    public float speedCircle { get; private set; } = 2f;
+    public long speedCirclePrice { get; private set; } = 50;
     [SerializeField] private float speedCirclePriceMultiplier;
     [SerializeField] private float speedCircleEffect = 0.05f;
     [SerializeField] private float speedCap = 0.1f;
     private bool _speedIsCap = false;
 
     [Header("Golden Chance")]
-    [SerializeField] private float goldenCircleChance = 0.01f;
-    [SerializeField] private long goldenCircleChancePrice = 150;
+    public float goldenCircleChance { get; private set; } = 0.01f;
+    public long goldenCircleChancePrice { get; private set; } = 150;
     [SerializeField] private float goldenCircleChancePriceMultiplier;
     [SerializeField] private float goldenCircleChanceEffect = 0.015f;
     [SerializeField] private float goldenCap = 0.35f;
     private bool _goldIsCap = false;
 
     [Header("More Circle")]
-    [SerializeField] private long moreCircle = 1;
-    [SerializeField] private long moreCirclePrice = 500;
+    public long moreCircle { get; private set; } = 1;
+    public long moreCirclePrice { get; private set; } = 500;
     [SerializeField] private float moreCirclePriceMultiplier;
     [SerializeField] private int moreCircleEffect = 1;
 
     [Header("Global Multiplier")]
-    [SerializeField] private double globalMultiplier = 0f;
-    [SerializeField] private long globalMultiplierPrice = 1000;
+    public double globalMultiplier { get; private set; } = 0f;
+    public long globalMultiplierPrice { get; private set; } = 1000;
     [SerializeField] private float globalMultiplierPriceMultiplier;
     [SerializeField] private float globalMultiplierEffect = 0.25f;
 
@@ -51,7 +51,6 @@ public class UpgradeManager : MonoBehaviour
 
     private void Awake()
     {
-        //load upgrades
         SendUpgrade();
     }
 
@@ -73,6 +72,24 @@ public class UpgradeManager : MonoBehaviour
         buttonManager.OnMoreCircleUpgraded -= UpgradeMoreCircle;
         buttonManager.OnGlobalMultiplierUpgraded -= UpgradeGlobalMultiplier;
         currencyManager.OnUpdate -= CurrencyUpdate;
+    }
+
+    public void LoadData(long pointOnHit, long pointOnHitPrice, float circleSpeed, long circleSpeedPrice, float goldenCircleChance, long goldenCircleChancePrice, long moreCircle, long moreCirclePrice, double globalMultiplier, long globalMultiplierPrice)
+    {
+        this.pointOnHit = pointOnHit;
+        this.pointOnHitPrice = pointOnHitPrice;
+
+        this.speedCircle = circleSpeed;
+        this.speedCirclePrice = circleSpeedPrice;
+
+        this.goldenCircleChance = goldenCircleChance;
+        this.goldenCircleChancePrice = goldenCircleChancePrice;
+
+        this.moreCircle = moreCircle;
+        this.moreCirclePrice = moreCirclePrice;
+
+        this.globalMultiplier = globalMultiplier;
+        this.globalMultiplierPrice = globalMultiplierPrice;
     }
 
     private void CurrencyUpdate(long currentCurrency)
@@ -174,5 +191,6 @@ public class UpgradeManager : MonoBehaviour
     {
         OnUpgrade?.Invoke(pointOnHit, speedCircle, goldenCircleChance, moreCircle, globalMultiplier);
         OnUpgradeBuy?.Invoke(pointOnHitPrice, speedCirclePrice, goldenCircleChancePrice, moreCirclePrice, globalMultiplierPrice);
+        SaveSystem.instance.SaveData();
     }
 }
