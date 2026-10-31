@@ -121,8 +121,7 @@ public class ButtonManager : MonoBehaviour
 
         while (remainingTime > 0)
         {
-            countdownText.text =
-                $"Keep these display settings? Reverting in {Mathf.CeilToInt(remainingTime)} seconds.";
+            countdownText.text = $"Keep these display settings? Reverting in {Mathf.CeilToInt(remainingTime)} seconds.";
 
             yield return new WaitForSecondsRealtime(1f);
 
@@ -156,11 +155,7 @@ public class ButtonManager : MonoBehaviour
             _countdownCoroutine = null;
         }
 
-        Screen.SetResolution(
-            _previousWidth,
-            _previousHeight,
-            _previousMode
-        );
+        Screen.SetResolution(_previousWidth, _previousHeight, _previousMode);
 
         confirmationPanel.SetActive(false);
 
