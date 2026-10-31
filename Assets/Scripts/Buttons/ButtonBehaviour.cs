@@ -16,7 +16,7 @@ public class ButtonBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExit
     public void OnPointerEnter(PointerEventData eventData)
     {
         transform.DOKill();
-        transform.DOScale(new Vector3(_scale.x + 0.2f, _scale.y + 0.2f, _scale.z + 0.2f), 1f).SetUpdate(true);
+        transform.DOScale(new Vector3(_scale.x + 0.2f, _scale.y + 0.2f, _scale.z + 0.2f), 0.5f).SetUpdate(true);
         Debug.Log("bigger");
     }
 
@@ -35,6 +35,6 @@ public class ButtonBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerExit
         transform.DOKill();
         Sequence sequence = DOTween.Sequence();
         sequence.Append(transform.DOScale(new Vector3(_scale.x + 0.3f, _scale.y + 0.3f, _scale.z + 0.3f), 0.3f).SetEase(Ease.OutBack).SetUpdate(true))
-            .Append(transform.DOScale(new Vector3(_scale.x + 0.2f, _scale.y + 0.2f, _scale.z + 0.2f), 0.3f).SetUpdate(true));
+            .Append(transform.DOScale(_scale, 0.3f).SetUpdate(true));
     }
 }
