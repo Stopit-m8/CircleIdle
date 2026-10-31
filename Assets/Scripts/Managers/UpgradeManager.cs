@@ -4,31 +4,31 @@ using UnityEngine;
 public class UpgradeManager : MonoBehaviour
 {
     [Header("Point On Hit")]
-    [SerializeField] private int pointOnHit;
+    [SerializeField] private int pointOnHit = 1;
     [SerializeField] private int pointOnHitPrice = 10;
     [SerializeField] private float pointOnHitPriceMultiplier;
     [SerializeField] private int pointOnHitEffect = 2;
 
     [Header("Speed Circle")]
-    [SerializeField] private float speedCircle;
+    [SerializeField] private float speedCircle = 2f;
     [SerializeField] private int speedCirclePrice = 50;
     [SerializeField] private float speedCirclePriceMultiplier;
     [SerializeField] private float speedCircleEffect = 0.05f;
 
     [Header("Golden Chance")]
-    [SerializeField] private float goldenCircleChance;
+    [SerializeField] private float goldenCircleChance = 0.01f;
     [SerializeField] private int goldenCircleChancePrice = 150;
     [SerializeField] private float goldenCircleChancePriceMultiplier;
     [SerializeField] private float goldenCircleChanceEffect = 0.015f;
 
     [Header("More Circle")]
-    [SerializeField] private int moreCircle;
+    [SerializeField] private int moreCircle = 1;
     [SerializeField] private int moreCirclePrice = 500;
     [SerializeField] private float moreCirclePriceMultiplier;
     [SerializeField] private int moreCircleEffect = 1;
 
     [Header("Global Multiplier")]
-    [SerializeField] private float globalMultiplier;
+    [SerializeField] private float globalMultiplier = 0f;
     [SerializeField] private int globalMultiplierPrice = 1000;
     [SerializeField] private float globalMultiplierPriceMultiplier;
     [SerializeField] private float globalMultiplierEffect = 0.25f;
@@ -48,6 +48,7 @@ public class UpgradeManager : MonoBehaviour
     private void Awake()
     {
         //load upgrades
+        SendUpgrade();
     }
 
     private void OnEnable()
@@ -94,7 +95,7 @@ public class UpgradeManager : MonoBehaviour
         speedCirclePrice = AdditionalPrice(speedCirclePrice, speedCirclePriceMultiplier);
         if (_tempCurrency != _currentCurrency)
         {
-            speedCircle *= speedCircleEffect;
+            speedCircle -= speedCircle * speedCircleEffect;
             SendUpgrade();
         }
     }
@@ -106,7 +107,7 @@ public class UpgradeManager : MonoBehaviour
         goldenCircleChancePrice = AdditionalPrice(goldenCircleChancePrice, goldenCircleChancePriceMultiplier);
         if (_tempCurrency != _currentCurrency)
         {
-            goldenCircleChance *= goldenCircleChanceEffect;
+            goldenCircleChance += goldenCircleChance * goldenCircleChanceEffect;
             SendUpgrade();
         }
     }
@@ -118,7 +119,7 @@ public class UpgradeManager : MonoBehaviour
         moreCirclePrice = AdditionalPrice(moreCirclePrice, moreCirclePriceMultiplier);
         if (_tempCurrency != _currentCurrency)
         {
-            moreCircle += moreCirclePrice;
+            moreCircle += moreCircleEffect;
             SendUpgrade();
         }
     }
@@ -140,7 +141,7 @@ public class UpgradeManager : MonoBehaviour
         {
             _currentCurrency -= currentPrice;
             OnBuy?.Invoke(-currentPrice);
-            currentPrice *= Mathf.RoundToInt(priceMultiplier);
+            currentPrice = Mathf.RoundToInt(currentPrice * priceMultiplier);
         }
         else
         {

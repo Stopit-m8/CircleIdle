@@ -9,11 +9,11 @@ public class UIManager : MonoBehaviour
 
     [Header("Texts")]
     [SerializeField] private TMP_Text currencyText;
-    //[SerializeField] private TMP_Text pointUpgradeText;
-    //[SerializeField] private TMP_Text speedUpgradeText;
-    //[SerializeField] private TMP_Text goldenUpgradeText;
-    //[SerializeField] private TMP_Text moreCircleUpgradeText;
-    //[SerializeField] private TMP_Text globalMultiplierUpgradeText;
+    [SerializeField] private TMP_Text pointUpgradeText;
+    [SerializeField] private TMP_Text speedUpgradeText;
+    [SerializeField] private TMP_Text goldenUpgradeText;
+    [SerializeField] private TMP_Text moreCircleUpgradeText;
+    [SerializeField] private TMP_Text globalMultiplierUpgradeText;
 
     private void OnEnable()
     {
@@ -29,10 +29,10 @@ public class UIManager : MonoBehaviour
 
     private void UpdateUpgradeUI(int pointPrice, int speedPrice, int goldenPrice, int moreCirclePrice, int globalMultiplierPrice)
     {
-        //pointUpgradeText.text = pointPrice.ToString();
-        //speedUpgradeText.text = speedPrice.ToString();
-        //goldenUpgradeText.text = goldenPrice.ToString();
-        //moreCircleUpgradeText.text = moreCirclePrice.ToString();
-        //globalMultiplierUpgradeText.text = globalMultiplierPrice.ToString();
+        pointUpgradeText.text = pointPrice.ToString();
+        speedUpgradeText.text = speedPrice.ToString();
+        goldenUpgradeText.text = goldenPrice.ToString();
+        moreCircleUpgradeText.text = moreCirclePrice.ToString();
+        globalMultiplierUpgradeText.text = globalMultiplierPrice.ToString();
     }
 }

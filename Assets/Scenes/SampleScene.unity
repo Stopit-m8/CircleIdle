@@ -124,6 +124,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6586842935867732112, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
   m_PrefabInstance: {fileID: 2122849154}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &53252007 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7525190442717106763, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+  m_PrefabInstance: {fileID: 5453532461321591574}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &75105643
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,6 +929,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &674657672 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7525190442717106763, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+  m_PrefabInstance: {fileID: 2029800969}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &696137318
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,9 +994,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 75105644}
     m_Modifications:
+    - target: {fileID: 1404598612517391507, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_text
+      value: Golden Circle Chance +1.5% (caps at 35%)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1404598612517391507, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_fontSize
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3724451450165518646, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
       propertyPath: m_Name
-      value: Upgrade (2)
+      value: UpgradeGoldenChance
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 696137320}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoldenChanceUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ButtonManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5426439355052567902, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1060,6 +1118,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7951376965173761542, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_text
+      value: Golden Circle Chance
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1134,6 +1196,17 @@ MonoBehaviour:
     prefab: {fileID: 1019048113981938512, guid: ef5dd2ba64506974f97a6cc5d6ecf4da, type: 3}
     size: 20
     parent: {fileID: 428486280}
+--- !u!114 &967643555 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7525190442717106763, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+  m_PrefabInstance: {fileID: 1515561813}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1063837669
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,6 +1387,11 @@ MonoBehaviour:
   currencyManager: {fileID: 1591383352}
   upgradeManager: {fileID: 1424842022}
   currencyText: {fileID: 2085629291}
+  pointUpgradeText: {fileID: 53252007}
+  speedUpgradeText: {fileID: 674657672}
+  goldenUpgradeText: {fileID: 2134398474}
+  moreCircleUpgradeText: {fileID: 1629449759}
+  globalMultiplierUpgradeText: {fileID: 967643555}
 --- !u!1 &1189100455
 GameObject:
   m_ObjectHideFlags: 0
@@ -1662,19 +1740,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cbe9d825b2329247a830e5ebaa6360c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeManager
-  pointOnHit: 0
+  pointOnHit: 1
   pointOnHitPrice: 10
   pointOnHitPriceMultiplier: 1.3
   pointOnHitEffect: 2
-  speedCircle: 0
+  speedCircle: 2
   speedCirclePrice: 50
   speedCirclePriceMultiplier: 0
   speedCircleEffect: 0.05
-  goldenCircleChance: 0
+  goldenCircleChance: 0.01
   goldenCircleChancePrice: 150
   goldenCircleChancePriceMultiplier: 0
   goldenCircleChanceEffect: 0.015
-  moreCircle: 0
+  moreCircle: 1
   moreCirclePrice: 500
   moreCirclePriceMultiplier: 0
   moreCircleEffect: 1
@@ -1692,9 +1770,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 75105644}
     m_Modifications:
+    - target: {fileID: 1404598612517391507, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_text
+      value: All Outcome Source + 25%
+      objectReference: {fileID: 0}
+    - target: {fileID: 1404598612517391507, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_fontSize
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3724451450165518646, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
       propertyPath: m_Name
-      value: Upgrade (4)
+      value: UpgradeGlobalMultiplier
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 696137320}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GlobalMultiplierUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ButtonManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5426439355052567902, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1779,6 +1893,10 @@ PrefabInstance:
     - target: {fileID: 6586842935867732112, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7951376965173761542, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_text
+      value: Global Multiplier
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2005,6 +2123,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CurrencyManager
   circleManager: {fileID: 815414153}
   upgradeManager: {fileID: 1424842022}
+--- !u!114 &1629449759 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7525190442717106763, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+  m_PrefabInstance: {fileID: 2122849154}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1809752099
 GameObject:
   m_ObjectHideFlags: 0
@@ -2181,9 +2310,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 75105644}
     m_Modifications:
+    - target: {fileID: 1404598612517391507, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_text
+      value: Speed +5% (caps at 0.1s)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1404598612517391507, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_fontSize
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3724451450165518646, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
       propertyPath: m_Name
-      value: Upgrade (1)
+      value: UpgradeSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 696137320}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SpeedCircleUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ButtonManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5426439355052567902, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2268,6 +2433,10 @@ PrefabInstance:
     - target: {fileID: 6586842935867732112, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7951376965173761542, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_text
+      value: Circle Speed
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2419,9 +2588,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 75105644}
     m_Modifications:
+    - target: {fileID: 1404598612517391507, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_text
+      value: +1 Circle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1404598612517391507, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_fontSize
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3724451450165518646, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
       propertyPath: m_Name
-      value: Upgrade (3)
+      value: UpgradeMoreCircles
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 696137320}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MoreCircleUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ButtonManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5426439355052567902, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2507,11 +2712,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7951376965173761542, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_text
+      value: More Circles
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+--- !u!114 &2134398474 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7525190442717106763, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+  m_PrefabInstance: {fileID: 741640186}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &5453532461321591574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2520,9 +2740,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 75105644}
     m_Modifications:
+    - target: {fileID: 1404598612517391507, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_text
+      value: Base Point +2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1404598612517391507, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_fontSize
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3724451450165518646, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
       propertyPath: m_Name
-      value: Upgrade
+      value: UpgradePoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 696137320}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PointUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ButtonManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880019427016556182, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5426439355052567902, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2607,6 +2863,10 @@ PrefabInstance:
     - target: {fileID: 6586842935867732112, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7951376965173761542, guid: 8446c0124a0f18c4f982768324aeff31, type: 3}
+      propertyPath: m_text
+      value: Point On Hit
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

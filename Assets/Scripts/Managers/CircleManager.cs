@@ -42,7 +42,9 @@ public class CircleManager : MonoBehaviour
         _circleValue = circleValue;
         _circleSpeed = circleSpeed;
         _goldenChance = goldenChance;
-        _circleSpawnRate = Mathf.RoundToInt(_circleSpeed / circleCount);
+        _circleSpawnRate = _circleSpeed / circleCount;
+        Debug.Log($"circle Spawn rate = {_circleSpawnRate}, Circle Speed = {_circleSpeed}, Circle Count = {circleCount}");
+        _globalMultiplier = globalmultiplier;
     }
 
     private void Update()
