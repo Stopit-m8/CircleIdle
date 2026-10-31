@@ -64,13 +64,15 @@ public class CircleManager : MonoBehaviour
             _circle = CirclePooling.Instance.SpawnFromPool("golden", this.transform.position);
             int _goldenValue = Mathf.RoundToInt(UnityEngine.Random.Range(5f, 10f) * _circleValue);
             _finalValue = _goldenValue + (Mathf.RoundToInt(_goldenValue * _globalMultiplier));
+            _circle.GetComponent<Circle>().Initialize(_finalValue, _circleSpeed, true);
         }
         else
         {
             _circle = CirclePooling.Instance.SpawnFromPool("normal", this.transform.position);
             _finalValue = _circleValue + (Mathf.RoundToInt(_circleValue * _globalMultiplier));
+            _circle.GetComponent<Circle>().Initialize(_finalValue, _circleSpeed, false);
         }
-        _circle.GetComponent<Circle>().Initialize(_finalValue, _circleSpeed);
+        
         _circle.SetActive(true);
         _circle.GetComponent<Circle>().OnComplete += CycleComplete;
         _circle.GetComponent<Circle>().OnComplete += PassOnPoints;

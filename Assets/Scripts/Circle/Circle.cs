@@ -9,6 +9,7 @@ public class Circle : MonoBehaviour
     private float _circleDuration = 2f;
     private int _circleValue = 1;
     private Vector3 _originalScale;
+    private bool _isGolden = false;
 
     public event Action<Circle, int> OnComplete;
 
@@ -32,14 +33,24 @@ public class Circle : MonoBehaviour
 
     private void CycleComplete()
     {
+        if (_isGolden)
+        {
+            AudioManager.instance.PlaySFX(AudioManager.instance.GoldCirclePop);
+        }
+        else
+        {
+            AudioManager.instance.PlaySFX(AudioManager.instance.CirclePop);
+        }
+            
         OnComplete?.Invoke(this, _circleValue);
         Debug.Log($"Cycle Complete, value = {_circleValue}, duration = {_circleDuration}");
         gameObject.SetActive(false);
     }
 
-    public void Initialize(int circleValue, float circleDuration)
+    public void Initialize(int circleValue, float circleDuration, bool isGolden)
     {
         _circleValue = circleValue;
         _circleDuration = circleDuration;
+        _isGolden = isGolden;
     }
 }

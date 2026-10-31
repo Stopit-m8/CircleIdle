@@ -8,7 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Circle
   - Water
   - UI
   - 
@@ -46,4 +46,5 @@ TagManager:
     locked: 0
   m_RenderingLayers:
   - Default
+  - Circle
   m_MigratedRenderPipelines: []
