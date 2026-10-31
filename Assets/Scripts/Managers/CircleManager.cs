@@ -1,11 +1,14 @@
 using System;
 using UnityEngine;
+using DG.Tweening;
 
 public class CircleManager : MonoBehaviour
 {
     [SerializeField] private GameObject normalCirclePrefab;
     [SerializeField] private GameObject goldenCirclePrefab;
     [SerializeField] private UpgradeManager upgradeManager;
+    [SerializeField] private GameObject circleCenter;
+    private Vector3 _originalScale;
     private long _circleValue = 1;
     private float _circleSpeed = 2f;
     private float _goldenChance = 0.01f;
@@ -25,6 +28,7 @@ public class CircleManager : MonoBehaviour
     private void Awake()
     {
         //load circleStat
+        _originalScale = circleCenter.transform.localScale;
     }
 
     private void OnEnable()
@@ -80,6 +84,9 @@ public class CircleManager : MonoBehaviour
 
     private void CycleComplete(Circle currCircle, long currCircleValue)
     {
+        circleCenter.transform.DOKill();
+        circleCenter.transform.localScale = _originalScale;
+        circleCenter.transform.DOPunchScale(Vector3.one * 0.1f, 0.3f);
         currCircle.OnComplete -= CycleComplete;
         currCircle.OnComplete -= PassOnPoints;
     }
