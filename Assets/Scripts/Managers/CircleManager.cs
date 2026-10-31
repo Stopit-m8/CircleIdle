@@ -13,12 +13,18 @@ public class CircleManager : MonoBehaviour
     private float _circleSpawnRate = 2f;
     private float _circleSpawnTimer = 0f;
     private GameObject _circle;
+    private int _finalValue;
 
     public event Action<int> OnCycleComplete;
 
     private void Start()
     {
         _circleSpawnTimer = _circleSpawnRate;
+    }
+
+    private void Awake()
+    {
+        //load circleStat
     }
 
     private void OnEnable()
@@ -36,7 +42,7 @@ public class CircleManager : MonoBehaviour
         _circleValue = circleValue;
         _circleSpeed = circleSpeed;
         _goldenChance = goldenChance;
-        _circleSpawnRate = _circleSpeed / (float)circleCount;
+        _circleSpawnRate = Mathf.RoundToInt(_circleSpeed / circleCount);
     }
 
     private void Update()
@@ -54,14 +60,16 @@ public class CircleManager : MonoBehaviour
         if (UnityEngine.Random.value <= _goldenChance)
         {
             _circle = CirclePooling.Instance.SpawnFromPool("golden", this.transform.position);
-            int _goldenValue = (int)UnityEngine.Random.Range(5f, 10f) * _circleValue;
-            _circle.GetComponent<Circle>().Initialize(_goldenValue, _circleSpeed);
+            int _goldenValue = Mathf.RoundToInt(UnityEngine.Random.Range(5f, 10f) * _circleValue);
+            _finalValue = _goldenValue + (Mathf.RoundToInt(_goldenValue * _globalMultiplier));
         }
         else
         {
             _circle = CirclePooling.Instance.SpawnFromPool("normal", this.transform.position);
-            _circle.GetComponent<Circle>().Initialize(_circleValue, _circleSpeed);
+            _finalValue = _circleValue + (Mathf.RoundToInt(_circleValue * _globalMultiplier));
         }
+        _circle.GetComponent<Circle>().Initialize(_finalValue, _circleSpeed);
+        _circle.SetActive(true);
         _circle.GetComponent<Circle>().OnComplete += CycleComplete;
         _circle.GetComponent<Circle>().OnComplete += PassOnPoints;
     }

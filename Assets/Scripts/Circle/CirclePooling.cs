@@ -56,7 +56,6 @@ public class CirclePooling : MonoBehaviour
 
         GameObject obj = poolDictionary[tag].Dequeue();
 
-        obj.SetActive(true);
         obj.transform.position = position;
 
         poolDictionary[tag].Enqueue(obj);
